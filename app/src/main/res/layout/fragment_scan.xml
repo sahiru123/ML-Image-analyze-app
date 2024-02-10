@@ -8,14 +8,13 @@
     android:layout_height="match_parent"
     tools:context=".ScanFragment">
 
-
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
         android:layout_width="326dp"
         android:layout_height="284dp"
-        app:layout_constraintBottom_toTopOf="@+id/outlinedButton"
+        android:layout_marginTop="172dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.922"
@@ -23,8 +22,34 @@
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/phonescan" />
 
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintDimensionRatio="1:1"
+    app:layout_constraintBottom_toTopOf="@+id/scanbutton"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/scanningAnimationView"
+        android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:layout_constraintDimensionRatio="1:1"
+    app:layout_constraintBottom_toBottomOf="@id/imageView"
+    app:layout_constraintEnd_toEndOf="@id/imageView"
+    app:layout_constraintStart_toStartOf="@id/imageView"
+    app:layout_constraintTop_toTopOf="@id/imageView"
+    app:lottie_autoPlay="true"
+    app:lottie_loop="true"
+    app:lottie_rawRes="@raw/scanning_animation" />
+
     <Button
-        android:id="@+id/outlinedButton"
+        android:id="@+id/scanbutton"
         style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,6 +62,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.755"
         app:strokeWidth="1dp" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
