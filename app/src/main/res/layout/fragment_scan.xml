@@ -1,66 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScanFragment">
+    android:orientation="vertical">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animationView"
-        android:layout_width="326dp"
-        android:layout_height="284dp"
-        android:layout_marginTop="172dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.922"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/phonescan" />
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            app:title="@string/page_title"/>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        app:layout_constraintDimensionRatio="1:1"
-    app:layout_constraintBottom_toTopOf="@+id/scanbutton"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+        android:layout_weight="1"
+        tools:context=".ScanFragment"
+        android:gravity="center">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/scanningAnimationView"
-        android:layout_width="0dp"
-    android:layout_height="0dp"
-    app:layout_constraintDimensionRatio="1:1"
-    app:layout_constraintBottom_toBottomOf="@id/imageView"
-    app:layout_constraintEnd_toEndOf="@id/imageView"
-    app:layout_constraintStart_toStartOf="@id/imageView"
-    app:layout_constraintTop_toTopOf="@id/imageView"
-    app:lottie_autoPlay="true"
-    app:lottie_loop="true"
-    app:lottie_rawRes="@raw/scanning_animation" />
+        <LinearLayout
+            android:id="@+id/buttonContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
 
-    <Button
-        android:id="@+id/scanbutton"
-        style="?attr/materialButtonOutlinedStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SCAN"
-        app:cornerRadius="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.755"
-        app:strokeWidth="1dp" />
+            <Button
+                android:id="@+id/button1"
+                style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                app:cornerRadius="30dp"
+                app:icon="@drawable/gallery"
+                app:iconSize="28dp"
+                app:iconTint="@color/black"
+                app:rippleColor="@color/ripple_color" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/button2"
+                style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                app:cornerRadius="40dp"
+                app:icon="@drawable/cams"
+                app:iconSize="32dp"
+                app:iconTint="@color/black"
+                app:rippleColor="@color/ripple_color" />
+
+            <Button
+                android:id="@+id/button3"
+                style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                app:cornerRadius="30dp"
+                app:icon="@drawable/retry"
+                app:iconSize="28dp"
+                app:iconTint="@color/black"
+                app:rippleColor="@color/ripple_color" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/generateReportButton"
+            android:layout_width="wrap_content"
+            style="@style/Widget.Material3.Button.TonalButton.Icon"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Generate Report"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toBottomOf="@id/buttonContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
