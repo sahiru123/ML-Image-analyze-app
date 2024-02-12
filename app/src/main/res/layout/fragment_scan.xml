@@ -131,7 +131,7 @@
                     android:fontFamily="@font/poppinsbold"
                     android:id="@+id/mealdesc"
 
-                    android:text="Mini Stat Description"
+                    android:text="Click to View Full Report"
                     android:textColor="#92857688"
                     android:textSize="14sp" />
             </LinearLayout>
