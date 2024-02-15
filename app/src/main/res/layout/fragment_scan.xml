@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            app:title="@string/page_title"
+            app:titleTextAppearance="@style/MyTitleTextAppearance" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:context=".ScanFragment"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/buttonContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+
+            <Button
+                android:id="@+id/gallopnbtn"
+                style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:cornerRadius="30dp"
+                app:icon="@drawable/gallery"
+                app:iconSize="28dp"
+                app:iconTint="@color/black"
+                app:rippleColor="@color/ripple_color" />
+
+            <Button
+                android:id="@+id/cambtn"
+                style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                app:cornerRadius="40dp"
+                app:icon="@drawable/cams"
+                app:iconSize="32dp"
+                app:iconTint="@color/black"
+                app:rippleColor="@color/ripple_color" />
+
+            <Button
+                android:id="@+id/retrybtn"
+                style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                app:cornerRadius="30dp"
+                app:icon="@drawable/retry"
+                app:iconSize="28dp"
+                app:iconTint="@color/black"
+                app:rippleColor="@color/ripple_color" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/generateReportButton"
+            android:layout_width="wrap_content"
+            style="@style/Widget.Material3.Button.TonalButton.Icon"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Generate Report"
+            app:titleTextAppearance="@style/MyTitleTextAppearance"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toBottomOf="@id/buttonContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <LinearLayout
+            android:id="@+id/imageContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_border"
+            android:layout_margin="16dp"
+            app:layout_constraintTop_toBottomOf="@id/generateReportButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/iamgecontainer"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/food" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/mealname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dish Name"
+                    android:fontFamily="@font/poppinsbold"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsbold"
+                    android:id="@+id/mealdesc"
+
+                    android:text="Click to View Full Report"
+                    android:textColor="#92857688"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
